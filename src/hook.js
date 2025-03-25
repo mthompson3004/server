@@ -16,7 +16,7 @@ const BLOCK_ADS = (process.env.BLOCK_ADS || '').toLowerCase() === 'true';
 const DISABLE_UPGRADE_CHECK =
 	(process.env.DISABLE_UPGRADE_CHECK || '').toLowerCase() === 'true';
 const ENABLE_LOCAL_SVIP = 'true';
-const ENABLE_FLAC = 'true';
+
 const LOCAL_VIP_UID = (process.env.LOCAL_VIP_UID || '')
 	.split(',')
 	.map((str) => parseInt(str))
