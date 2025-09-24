@@ -83,6 +83,9 @@ hook.target.path = new Set([
 	'/api/v1/search/song/get',
 	'/api/search/complex/get',
 	'/api/search/complex/page',
+	'/api/search/pc/complex/get',
+	'/api/search/pc/complex/page',
+	'/api/search/song/list/page',
 	'/api/search/song/page',
 	'/api/cloudsearch/pc',
 	'/api/v1/playlist/manipulate/tracks',
@@ -158,6 +161,7 @@ hook.request.before = (ctx) => {
 				if ('x-napm-retry' in req.headers)
 					delete req.headers['x-napm-retry'];
 				req.headers['X-Real-IP'] = '118.88.88.88';
+				if ('x-aeapi' in req.headers) req.headers['x-aeapi'] = 'false';
 				if (
 					req.url.includes('stream') ||
 					req.url.includes('/eapi/cloud/upload/check')
